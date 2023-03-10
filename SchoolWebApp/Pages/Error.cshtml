@@ -1,0 +1,18 @@
+﻿@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Ошибка";
+}
+
+<h1 class="text-danger">Ошибка.</h1>
+<h2 class="text-danger">При обработке запроса возникла ошибка.</h2>
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>@Model.ExceptionMessage</strong>
+    </p>
+}
+<div>
+    <a asp-page="../Index">Назад</a>
+</div>

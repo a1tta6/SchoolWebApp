@@ -1,0 +1,65 @@
+﻿@page
+@model SchoolWebApp.Pages.ClassPage.IndexModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Классы</title>
+</head>
+<body>
+    <p>
+        <a asp-page="Create">Добавить класс</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Номер класса
+                </th>
+                <th>
+                    Параллель
+                </th>
+                <th>
+                    Учитель
+                </th>
+                <th>
+                    Год
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Class)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Parallel.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Teacher.Fullname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Year.Year)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Редактировать</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Удалить</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-page="../Index">Назад к списку сущностей</a>
+    </div>
+</body>
+</html>

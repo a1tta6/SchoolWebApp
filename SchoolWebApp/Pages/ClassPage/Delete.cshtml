@@ -1,0 +1,49 @@
+﻿@page
+@model SchoolWebApp.Pages.ClassPage.DeleteModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Удалить</title>
+</head>
+<body>
+
+<h3>Вы уверены, что хотите удалить класс?</h3>
+<div>
+    <h4>Класс</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Параллель
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.Parallel.Title)
+        </dd>
+        <dt class="col-sm-2">
+            Учитель
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.Teacher.Fullname)
+        </dd>
+        <dt class="col-sm-2">
+            Учебный год
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Class.Year.Year)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Class.Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Назад к списку классов</a>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿@page
+@model SchoolWebApp.Pages.IndexPageModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Школа - Главная страница</title>
+</head>
+<body>
+    <h2>Все сущности</h2>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>
+                    <a asp-page="./TeacherPage/Index">Учителя</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a asp-page="./StudentPage/Index">Ученики</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a asp-page="./AcademicYearPage/Index">Учебные года</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a asp-page="./ClassPage/Index">Классы</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a asp-page="./ClassParallelPage/Index">Параллели</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a asp-page="./LevelPage/Index">Уровни</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+

@@ -1,0 +1,47 @@
+﻿@page
+@model SchoolWebApp.Pages.AcademicYearPage.IndexModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Учебные года</title>
+</head>
+<body>
+    <p>
+        <a asp-page="Create">Добавить год</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Учебный год
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.AcademicYear)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Year)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Редактировать</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Удалить</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-page="../Index">Назад к списку сущностей</a>
+    </div>
+</body>
+</html>

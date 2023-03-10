@@ -1,0 +1,37 @@
+﻿@page
+@model SchoolWebApp.Pages.TeacherPage.DeleteModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Удалить учителя</title>
+</head>
+<body>
+
+<h3>Вы уверены что хотите удалить учителя из списка</h3>
+<div>
+    <h4>Учитель</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            ФИО
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Teacher.Fullname)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Teacher.Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Назад к списку учителей</a>
+    </form>
+</div>
+</body>
+</html>

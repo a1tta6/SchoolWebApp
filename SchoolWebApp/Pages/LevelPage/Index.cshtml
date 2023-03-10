@@ -1,0 +1,40 @@
+﻿@page
+@model SchoolWebApp.Pages.LevelPage.IndexModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Уровень</title>
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Уровень
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Level)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LevelName)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <a asp-page="../Index">Назад к списку сущностей</a>
+    </div>
+</body>
+</html>
